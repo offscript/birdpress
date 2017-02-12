@@ -1,0 +1,131 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* universal */
+
+
+
+body {
+  padding-top: 60px; /*padding for the nav-bar */
+  background-color: lightseagreen;
+}
+
+section {
+  overflow: auto; /* automatic scroll on sections that get too large for their
+  containers */
+}
+
+textarea {
+  resize: vertical; 
+}
+
+.center {
+  text-align: center;
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+/* Typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #44271e;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #777;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+/* Header */
+
+.navbar-inverse {
+  background-color: lightseagreen;
+  border: none;
+  .navbar-nav > li > a {
+    color: #44271e;
+  }
+}
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #44271e;
+  /* text-transform: uppercase ; */
+  letter-spacing: 1px;
+  padding-top: 9px;
+  font-weight: bold;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+/* Footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 100px;
+  color: #777;
+  a {
+    footer a {
+      color: #44271e;
+    }
+
+    &:hover {
+        color: #222;
+      }
+  }
+
+  small {
+    float: left;
+    color: #44271e;
+  }
+    
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 15px;
+      a {
+        color: #44271e;
+      }
+    }
+  }
+}
+
+/* Home */
+
+.jumbotron {
+  background-color: lightseagreen;
+  padding-top: 80px;
+  padding-bottom: 60px;
+  h2 {
+    color: #44271e;
+  }
+  
+  .btn {
+    background-color: #4f4133;
+    border-color: floralwhite;
+  }
+  
+}
