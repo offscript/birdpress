@@ -1,13 +1,20 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+/* Mixins */
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
 /* universal */
 
 
 
 body {
   padding-top: 60px; /*padding for the nav-bar */
-  background-color: lightseagreen;
 }
 
 section {
@@ -79,25 +86,54 @@ p {
   }
 }
 
+/* Header Dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+  .btn .btn-secondary .dropdown-toggle {
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    background-color: lightseagreen
+  }
+}
+.dropdown-menu {
+      display: none;
+      position: absolute;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      padding: 12px 16px;
+      z-index: 1;
+        a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+}
+
+
+
+.dropdown:hover .dropdown-content {
+    /*display: block;*/
+}
+
 /* Footer */
 
-footer {
-  margin-top: 45px;
-  padding-top: 100px;
-  color: #777;
-  a {
-    footer a {
-      color: #44271e;
-    }
-
-    &:hover {
-        color: #222;
-      }
-  }
+.navbar-fixed-bottom {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #4f4133;
 
   small {
     float: left;
-    color: #44271e;
+    color: white;
+    padding-top: 4px;
+    
+    &:hover {
+        color: lightseagreen;
+      }
   }
     
   ul {
@@ -107,7 +143,7 @@ footer {
       float: left;
       margin-left: 15px;
       a {
-        color: #44271e;
+        color: white;
       }
     }
   }
@@ -116,16 +152,103 @@ footer {
 /* Home */
 
 .jumbotron {
-  background-color: lightseagreen;
+  background-color: white;
   padding-top: 80px;
   padding-bottom: 60px;
+  h1 {
+    color: #4f4133;
+  }
   h2 {
-    color: #44271e;
+    color: cornflowerblue;
   }
   
   .btn {
     background-color: #4f4133;
     border-color: floralwhite;
   }
-  
+}
+
+/* User sidebar */
+
+aside {
+  section.user_info {
+    margin-top: 20px;
+  }
+  section {
+    padding: 10px 0;
+    margin-top: 20px;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 1.4em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+    }
+  }
+}
+
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+
+
+/* forms */
+.
+.
+.
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
+}
+
+/* Misc. */
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
 }
