@@ -1,0 +1,8 @@
+thomas:
+  name: Thomas Me
+  email: me@example.com
+  password_digest: <%= User.digest('password') %>
+  admin: true
+  activated: true
+  activated_at: <%= Time.zone.now %>
+

@@ -1,0 +1,4 @@
+#hold this 
+<li>
+                     <%= f.submit “Sign in”, class: “btn btn-primary” %>
+                  </li>
