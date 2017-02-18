@@ -23,5 +23,7 @@ module Workspace
     # Do not swallow errors in after_commit/after_rollback callbacks.
     #config.active_record.raise_in_transactional_callbacks = true
     #the line above was giving me a deprecation warning so I commented it out
+    
+     config.action_view.embed_authenticity_token_in_remote_forms = true
   end
 end
