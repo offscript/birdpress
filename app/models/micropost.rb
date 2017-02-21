@@ -4,6 +4,7 @@ class Micropost < ApplicationRecord
   default_scope -> { order(created_at: :desc) }
   mount_uploader :picture, PictureUploader
   validates :user_id, presence: true
+  validates :title, presence: true 
   validates :content, presence: true 
   #validate  :word_count
   validate  :picture_size
@@ -17,6 +18,7 @@ class Micropost < ApplicationRecord
         errors.add(:picture, "should be less than 5MB")
       end
   end
+  
   
 end
 

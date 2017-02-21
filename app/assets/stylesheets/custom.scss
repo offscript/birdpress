@@ -11,8 +11,6 @@
 
 /* universal */
 
-
-
 body {
   padding-top: 60px; /*padding for the nav-bar */
 }
@@ -199,15 +197,20 @@ aside {
 
 /* forms */
 
-input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
+textarea, select, .uneditable-input {
+  border: 1px solid;
   width: 100%;
   margin-bottom: 15px;
   @include box_sizing;
+  border-color: #4f4133;
 }
 
 input {
   height: auto !important;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+  border:none;
 }
 
 #error_explanation {
@@ -277,25 +280,70 @@ input {
     display: block;
     margin-left: 60px;
   }
-}
-
-.title {
-  height: 25px;
-  margin-bottom: 5px;
-  border: none;
-}
-
-textarea {
-  height: 300px;
-  margin-bottom: 5px;
-}
-
-
-span.picture {
+  
+  
+  span.picture {
   margin-top: 10px;
-  input {
-    border: 0;
+    input {
+      border: none;
+    }
   }
+  
+  .title {
+    height: 25px;
+    margin-bottom: 5px;
+    border: none;
+  }
+
+}
+
+/* Show */
+  #show_title {
+    padding-bottom: 20px;
+    font-size: 32px;
+    font-weight: bold;
+  }
+  
+  #show_content {
+    overflow: auto;
+    padding-bottom: 25px;
+  }
+  
+  .comment {
+    textarea {
+      border: none;
+      margin-bottom: 0px;
+    }
+    .btn-primary {
+      width: 50%;
+      float: right;
+    }
+  }
+    #comment_title {
+      height: 20px;
+      width: 50%;
+    }
+    #comment_body {
+      height: 60px
+    }
+  
+  
+  .col-md-8 {
+    overflow:auto;
+  }
+
+
+/* Micropost Form */
+
+.new_micropost {
+  textarea {
+    height: 300px;
+    margin-bottom: 5px;
+  }
+
+  #new_title textarea {
+      height: 25px;
+    }
 }
 
 .stats {

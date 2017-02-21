@@ -21,5 +21,6 @@ Rails.application.routes.draw do
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :microposts,          only: [:new, :edit, :create, :destroy, :show]
   resources :relationships,       only: [:create, :destroy]
+  resources :comments,            only: [:create, :destroy]
   
 end
