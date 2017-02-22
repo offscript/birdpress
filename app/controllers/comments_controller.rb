@@ -3,14 +3,14 @@ class CommentsController < ApplicationController
   before_action :correct_user,   only: :destroy
   
   
-  def create 
+  def create
     @comment = current_user.comments.build(comment_params)
     if @comment.save
       flash[:success] = "That's the Word!"
-      redirect_to micropost_url
+      redirect_to micropost_path(@comment.micropost_id)
     else
       flash[:danger] = "Make sure you have a Title and Body!"
-      render micropost_url
+      redirect_to micropost_path(@comment.micropost_id)
     end
   end
   
@@ -23,7 +23,7 @@ class CommentsController < ApplicationController
   private 
   
   def comment_params
-     params.require(:comment).permit(:body, :title)
+     params.require(:comment).permit(:body, :title, :micropost_id)
   end
   
   def correct_user

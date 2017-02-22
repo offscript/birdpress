@@ -9,14 +9,15 @@ class MicropostsController < ApplicationController
 
   def show 
     @micropost = Micropost.find_by(params[:id])
-    @comment = current_user.comments.build
+    #@comments = @micropost.comments.All
+    @comment = current_user.comments.build(micropost_id: @micropost.id)
   end
 
   def create
     @micropost = current_user.microposts.build(micropost_params)
     if @micropost.save
       flash[:success] = "Micropost created!"
-      redirect_to root_url
+      redirect_to micropost_path(@micropost)
     else
       @feed_items = [ ]
       render 'static_pages/home'
