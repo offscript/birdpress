@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment.destroy
     flash[:success] = "Comment deleted!"
-    redirect_to request.referrer || root_url
+    redirect_to micropost_path(@comment.micropost_id)
   end
 
   private 

@@ -1,6 +1,6 @@
 class MicropostsController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy]
-  before_action :correct_user,   only: :destroy
+  before_action :correct_user,   only: [:edit, :update, :destroy]
   
   
   def new
@@ -9,8 +9,8 @@ class MicropostsController < ApplicationController
 
   def show 
     @micropost = Micropost.find_by(params[:id])
-    #@comments = @micropost.comments.All
-    @comment = current_user.comments.build(micropost_id: @micropost.id)
+    @comment = current_user.comments.build(micropost_id: @micropost.id) #new comments
+    @comments = Comment.where(micropost_id: @micropost_id) #already posted comments
   end
 
   def create
@@ -28,6 +28,19 @@ class MicropostsController < ApplicationController
     @micropost.destroy
     flash[:success] = "Micropost deleted"
     redirect_to request.referrer || root_url
+  end
+  
+  def edit
+    @micropost = Micropost.find_by(params[:id])
+  end
+  
+  def update
+    if @micropost.update_attributes(micropost_params)
+      flash[:success] = "Post updated"
+      redirect_to micropost_path(@micropost)
+    else
+      render 'edit'
+    end
   end
   
   private

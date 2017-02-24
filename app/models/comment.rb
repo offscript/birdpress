@@ -6,4 +6,6 @@ class Comment < ApplicationRecord
   validates :micropost_id, presence: true
   validates :body, presence: true
   validates :title, presence: true
+  #length validation
+  
 end
