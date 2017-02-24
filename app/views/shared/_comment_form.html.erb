@@ -1,0 +1,14 @@
+<%= form_for(@comment) do |f| %>
+<%= render 'shared/error_messages', object: f.object %>
+  <div class="comment">
+  <span id="comment_title">
+    <%= f.text_area :title, placeholder: "Title" %>
+  </span>
+  <%= f.submit "Post", class: "btn btn-primary" %>
+  <span id="comment_body">
+    <%= f.text_area :body, placeholder: "What did you think?" %>
+  </span>
+  <%= f.hidden_field :micropost_id %>
+  </div>
+  
+<% end %>
