@@ -1,17 +1,19 @@
 <% if @comments.any? %>
   <div id= "comment_section">
+    <h2>Comments</h2>
     <ol class="comments">
       <% @comments.each do |comment| -%>
-      <li id="comment-<%= comment.id %>"></li>
+      <li id="comment-<%= comment.id %>">
       <span class="user"><%= link_to comment.user.name, comment.user %></span>
-        <span class="user"><%= comment.title %></span>
-        <span class="content"><%= comment.body %></span>
+        <div class="title"><%= comment.title %></div>
+        <div class="content"><%= comment.body %></div>
         <span class="timestamp">
           Posted <%= time_ago_in_words(comment.created_at) %> ago.
           <% if current_user?(comment.user) %>
             <%= link_to "delete", comment, method: :delete,
                                              data: { confirm: "You sure?" } %>
           <% end %>
+          </li>
       <% end -%>
     </ol>
   </div>

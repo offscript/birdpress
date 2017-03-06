@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy]
-  before_action :correct_user,   only: :destroy
+  #before_action :correct_user,   only: :destroy
   
   
   def create
@@ -15,9 +15,10 @@ class CommentsController < ApplicationController
   end
   
   def destroy
+    @comment = Comment.find_by(params[:id])
+    @micropost = Comment.find_by(params[:micropost_id])
     @comment.destroy
-    flash[:success] = "Comment deleted!"
-    redirect_to micropost_path(@comment.micropost_id)
+    redirect_to micropost_path(@micropost)
   end
 
   private 

@@ -296,36 +296,6 @@ input {
 
 }
 
-/* Comments */
-
-.comments {
-  list-style: none;
-  padding: 0;
-  li {
-    padding: 10px 0;
-    border-top: 1px solid #e8e8e8;
-  }
-  .user {
-    margin-top: 5em;
-    padding-top: 0;
-  }
-  .body {
-    display: block;
-    margin-left: 60px;
-  }
-  .timestamp {
-    color: $gray-light;
-    display: block;
-    margin-left: 60px;
-  }
-  
-  .title {
-    height: 10px;
-    margin-bottom: 5px;
-    border: none;
-  }
-  
-}
 
 /* Show Post */
 .show_title {
@@ -354,6 +324,8 @@ input {
   }
 }
 
+/* Adding Comments */
+
 #comment_title {
   height: 20px;
   width: 50%;
@@ -362,25 +334,60 @@ input {
 #comment_body {
   height: 60px
 }
-
-  
   
 .col-md-8 {
   overflow:auto;
   }
 
 ol.comments {
-  height: 200x;
+  height: 500px;
   overflow: auto;
-  float: left;
   .user {
     padding-top: 5px;
-    float: left;
+
   }
   a {
     padding-left: inherit;
   }
 }
+
+
+/* Showing Comments */
+
+#comment_section h2 {
+  color: black;
+  font-size: 1.5em;
+  font-weight: 500;
+  text-align: inherit;
+  margin-bottom: 10px;
+} 
+
+.comments {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+  
+  .user {
+    padding-bottom: 5px;
+  }
+  
+  .timestamp {
+    color: $gray-light;
+    display: block;
+    margin: auto;
+  }
+  
+  .title {
+    margin-bottom: 5px;
+    border: none;
+  }
+  
+}
+
+
 
 /* Edit Post */
 

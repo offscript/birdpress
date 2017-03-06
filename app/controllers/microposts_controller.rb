@@ -10,7 +10,7 @@ class MicropostsController < ApplicationController
   def show 
     @micropost = Micropost.find_by(params[:id])
     @comment = current_user.comments.build(micropost_id: @micropost.id) #new comments
-    @comments = Comment.where(micropost_id: @micropost_id) #already posted comments
+    @comments = Comment.where(micropost_id: @micropost.id) #already posted comments
   end
 
   def create
