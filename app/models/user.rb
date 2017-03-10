@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :followers, through: :passive_relationships, source: :follower
   has_many :comments
   attr_accessor :remember_token, :activation_token, :reset_token
+  mount_uploader :avatar, AvatarUploader
   before_save   :downcase_email
   before_create :create_activation_digest
   validates :name,  presence: true, length: { maximum: 50 }
@@ -21,6 +22,7 @@ class User < ApplicationRecord
                   
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
+  
   
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
