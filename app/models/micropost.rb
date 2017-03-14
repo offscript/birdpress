@@ -5,13 +5,9 @@ class Micropost < ApplicationRecord
   mount_uploader :picture, PictureUploader
   validates :user_id, presence: true
   validates :title, presence: true 
-  validates :content, presence: true 
-  #validate  :word_count
+  validates :content, presence: true
   validate  :picture_size
   
-  def word_count 
-    return false if :content.split(" ").length > 400
-  end
   
   def picture_size
       if picture.size > 5.megabytes

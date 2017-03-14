@@ -6,3 +6,39 @@ thomas:
   activated: true
   activated_at: <%= Time.zone.now %>
 
+
+percy:
+  name: Percy Shelley
+  email: percy@example.com
+  password_digest: <%= User.digest('password') %>
+  admin: false
+  activated: true
+  activated_at: <%= Time.zone.now %>
+
+michael:
+  name: Michael Example
+  email: michael@example.com
+  password_digest: <%= User.digest('password') %>
+  admin: true
+  activated: true
+  activated_at: <%= Time.zone.now %>
+  
+kurt: 
+  name: Kurt Vonneguy
+  email: kurt@example.com
+  password_digest: <%= User.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
+  
+thomas2:
+  name: Thomas Pynchon
+  email: crying@example.com
+  password_digest: <%= User.digest('password') %>
+  activated_at: <%= Time.zone.now %>
+
+will:
+  name: William Shakespeare
+  email: will@example.com
+  password_digest: <%= User.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
