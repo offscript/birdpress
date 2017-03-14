@@ -1,5 +1,5 @@
 <li id="micropost-<%= micropost.id %>">
-  <div class="thumb"><%= image_tag micropost.user.avatar.url(:thumb) if  micropost.user.avatar? %></div>
+  <div class="thumb"><%= image_tag micropost.user.avatar.url(:thumb) if micropost.user.avatar? %></div>
   <div class="post">
     <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
     <div class="title"><%= link_to micropost.title, micropost_path(micropost) %></div>
