@@ -19,6 +19,7 @@ class MicropostsController < ApplicationController
       flash[:success] = "Micropost created!"
       redirect_to micropost_path(@micropost)
     else
+      flash[:alert] = "Something went wrong"
       @feed_items = [ ]
       render 'static_pages/home'
     end
