@@ -8,7 +8,7 @@ class MicropostsController < ApplicationController
   end
 
   def show 
-    @micropost = Micropost.find_by(params[:id])
+    @micropost = Micropost.find(params[:id])
     @comment = current_user.comments.build(micropost_id: @micropost.id) #new comments
    #@comments = Comment.where(micropost_id: @micropost.id) no sql lite in production?
     @comments = Comment.where("micropost_id = ?", params[:id])
