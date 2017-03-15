@@ -33,7 +33,7 @@ class MicropostsController < ApplicationController
   end
   
   def edit
-    @micropost = Micropost.find_by(params[:id])
+    @micropost = Micropost.find(params[:id])
   end
   
   def update
