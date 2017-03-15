@@ -3,7 +3,7 @@
   <div class="stats">
     <h1><%= @user.name %></h1>
     <span class="profile"><%= link_to "view my profile", @user %></span>
-    <span><%= pluralize(@user.microposts.count, "micropost") %></span>
+    <span><%= pluralize(@user.microposts.count, "post") %></span>
     <div class="follow">
       <a href="<%= following_user_path(@user) %>">
         <strong id="following" class="stat">
