@@ -17,5 +17,8 @@
         </strong>
         followers
       </a>
+    </div>
   </div>
-</div>
+  <div class="follow_form">
+    <%= render 'users/follow_form' if logged_in? %>
+  </div>
