@@ -38,7 +38,17 @@ class UsersController < ApplicationController
   
   def index
    @users = User.paginate(page: params[:page])
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @users }
+      format.json { render :json => @users }
+    end
   end
+
+  def as_json(options={})
+      { :name => self.name }  # Send only the names
+  end
+
   
   def destroy
     User.find(params[:id]).destroy
