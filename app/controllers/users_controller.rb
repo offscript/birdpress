@@ -46,7 +46,7 @@ class UsersController < ApplicationController
   end
 
   def as_json(options={})
-      { :name => self.name }  # Send only the names
+      { :name => self.name }  # Send only names
   end
 
   
