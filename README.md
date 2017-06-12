@@ -16,3 +16,5 @@ Some of the other features:
   mini_magick gems
   
 Project by Thomas Keating.
+
+p.s: rails server -b $IP -p $PORT 
