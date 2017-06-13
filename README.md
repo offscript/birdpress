@@ -18,3 +18,5 @@ Some of the other features:
 Project by Thomas Keating.
 
 p.s: rails server -b $IP -p $PORT 
+homepage: https://blog.hubspot.com/blog/tabid/6307/bid/31097/12-Critical-Elements-Every-Homepage-Must-Have-Infographic.aspx#sm.000tbcip518vnctzvan24esnruk2i
+photos: https://blog.hubspot.com/marketing/free-stock-photos#sm.000tbcip518vnctzvan24esnruk2i
