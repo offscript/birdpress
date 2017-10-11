@@ -1,3 +1,6 @@
+<!--
+This page/form allows you to edit microposts. This page is very similar to the /microposts/new.html.erb. If the update is unsuccessful errors are returned to the screen. Validations for the micrposts can be found at app/models/micropost.rb.
+-->
 <% provide(:title, @micropost.title) %>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
@@ -16,7 +19,7 @@
     <% end %>
     </div>
   </div>
-  
+<!-- This is a little javascript that allows you to upload a picture along with your micropost.-->  
 <script type="text/javascript">
   $('#micropost_picture').bind('change', function() {
     var size_in_megabytes = this.files[0].size/1024/1024;

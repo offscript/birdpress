@@ -1,13 +1,16 @@
+<!--
+This is the layout file for the site. It's pretty skeletal, comments are in line. The title The render functions 
+-->
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= full_title(yield(:title)) %></title>
-    <%= render 'layouts/rails_default' %>
-    <%= render 'layouts/shim' %>
+    <title><%= full_title(yield(:title)) %></title> <!--The full title function generates the title of the web page. It's located in app/helpers/application_helper.rb-->
+    <%= render 'layouts/rails_default' %> <!-- Renders the contents of app/views/layouts/rails_default which contains meta tags for css, javascript etc. -->
+    <%= render 'layouts/shim' %> <!--Contains exceptions for IE9 browswer-->
   </head>
   <body>
-    <%= render 'layouts/header' %>
-    <div class="container">
+    <%= render 'layouts/header' %> <!-- Renders the header -->
+    <div class="container"> <!-- Container for messages: flash, danger, etc. -->
       <% flash.each do |message_type, message| %>
         <div class="alert alert-<%= message_type %>"><%= message %></div>
       <% end %>
