@@ -433,6 +433,10 @@ input {
 #comment_body {
   height: 60px
 }
+
+#comment_title textarea, #comment_body textarea {
+    border: 1px solid black;
+  }
   
 .col-md-8 {
   overflow:auto;
